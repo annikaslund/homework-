@@ -12,7 +12,7 @@ class Stack
   end
 
   def peek
-    @stack_stor.first
+    @stack_stor.last
   end
 
 end
