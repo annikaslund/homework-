@@ -66,10 +66,21 @@ class Board
   end
 
   def one_side_empty?
-    side1 = @cups[0..6]
-    side2 = @cups[7..13]
+    side1 = @cups[0..6].all? {|cup| cup.empty?}
+    side2 = @cups[7..13].all? {|cup| cup.empty?}
+
+    return side1 || side2 if true
+    false
+
   end
 
   def winner
+    if @cups[6] == @cups[13]
+      :draw
+    elsif @cups[6].length > @cups[13].length
+      @name1
+    else
+      @name2
+    end
   end
 end
