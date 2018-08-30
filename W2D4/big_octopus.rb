@@ -61,3 +61,27 @@ def clever_oct(arr)
 
   longest_fish
 end
+
+#tiles_array = ["up", "right-up", "right", "right-down", "down", "left-down", "left",  "left-up" ]
+def dancing_oct_slow(direction, tiles_array)
+  tiles_array.each_with_index do |tile, idx|
+    return idx if direction == tiles_array[idx]
+  end
+end
+
+tiles_hash = {
+  "up" => 0,
+  "right-up" => 1,
+  "right" => 2,
+  "right-down" => 3,
+  "down" => 4,
+  "left-down" => 5,
+  "left" => 6,
+  "left-up" => 7
+}
+
+def dancing_oct_constant(direction, tiles_hash)
+  tiles_hash.each do |k|
+    return tiles_hash[k] if direction == k
+  end
+end
